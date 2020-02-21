@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/devwalex/waitlist#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "faker": "^4.1.0",
     "mysql": "^2.18.1"
   }
