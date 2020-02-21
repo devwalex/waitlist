@@ -1,0 +1,19 @@
+{
+  "name": "waitlist",
+  "version": "1.0.0",
+  "description": "waitlist is a simple web application that saves users email to the database and gets the number of users that join the waitlist",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devwalex/waitlist.git"
+  },
+  "author": "Salami Usman Olawale",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devwalex/waitlist/issues"
+  },
+  "homepage": "https://github.com/devwalex/waitlist#readme"
+}
