@@ -1,5 +1,6 @@
 const faker = require("faker");
 const mysql = require("mysql");
+const sql = require("./sql");
 require("dotenv").config();
 
 const connection = mysql.createConnection({
@@ -7,13 +8,13 @@ const connection = mysql.createConnection({
   port: process.env.DB_PORT,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  database: process.env.DB_NAME
+  database: process.env.DB_NAME,
+  multipleStatements: true
 });
 connection.connect();
 
-connection.query("SELECT 1 + 1 AS solution", function(error, results, fields) {
+connection.query(sql, function(error, results, fields) {
   if (error) throw error;
-  console.log("The solution is: ", results[0].solution);
+  console.log("Table created successfully ", results);
 });
-
 connection.end();
