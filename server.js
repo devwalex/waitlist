@@ -1,7 +1,14 @@
+const express = require("express");
 const faker = require("faker");
 const mysql = require("mysql");
 const schema = require("./schema");
 require("dotenv").config();
+
+const app = express();
+
+app.listen(8080, () => {
+  console.log("Server running on port 8080");
+});
 
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
