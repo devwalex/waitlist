@@ -6,10 +6,6 @@ require("dotenv").config();
 
 const app = express();
 
-app.listen(8080, () => {
-  console.log("Server running on port 8080");
-});
-
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -28,13 +24,24 @@ connection.query(schema, function(error, results) {
 });
 
 */
-let data = [];
-for (let i = 0; i < 500; i++) {
-  data.push([faker.internet.email(), faker.date.past()]);
-}
+// let data = [];
+// for (let i = 0; i < 500; i++) {
+//   data.push([faker.internet.email(), faker.date.past()]);
+// }
 
-connection.query("INSERT INTO users (email, created_at) VALUES ? ", [data], (error, results) => {
-  if (error) throw error;
-  console.log("User inserted", results);
+// connection.query("INSERT INTO users (email, created_at) VALUES ? ", [data], (error, results) => {
+//   if (error) throw error;
+//   console.log("User inserted", results);
+// });
+app.get("/", (req, res) => {
+  const query = "SELECT COUNT(*) AS count FROM users";
+  connection.query(query, (error, results) => {
+    if (error) throw error;
+    const count = results[0].count;
+    res.send(`Welcome to WaitList Home Page. We have ${count} users in the db`);
+  });
+  connection.end();
 });
-connection.end();
+app.listen(8080, () => {
+  console.log("Server running on port 8080");
+});
