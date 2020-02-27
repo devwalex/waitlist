@@ -6,6 +6,8 @@ require("dotenv").config();
 
 const app = express();
 
+app.set("view engine", "ejs");
+
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -38,9 +40,8 @@ app.get("/", (req, res) => {
   connection.query(query, (error, results) => {
     if (error) throw error;
     const count = results[0].count;
-    res.send(`Welcome to WaitList Home Page. We have ${count} users in the db`);
+    res.render("home", { count });
   });
-  connection.end();
 });
 app.listen(8080, () => {
   console.log("Server running on port 8080");
