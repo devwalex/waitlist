@@ -1,1 +1,14 @@
-<h1>Welcome to WaitList Home Page. We have <%=count%> users in the db</h1>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700,900|Rock+Salt&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <h1>JOIN OUR WAITLIST</h1>
+  <p>Welcome to waitlist home page. Enter your email to join <strong><%=count%></strong> others on our waitlist.</p>
+  <form action="/join" method="post">
+    <label for="email">
+      <input type="email" name="email" placeholder="Enter Your Email" required />
+      <button>Join Now</button>
+    </label>
+  </form>
+</body>

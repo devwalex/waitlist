@@ -1,0 +1,51 @@
+body {
+  text-align: center;
+  text-shadow: 0 5px 2px rgba(0, 0, 0, 1);
+  font-family: "Muli", sans-serif;
+  color: #fffcdf;
+  background-image: url("https://cdn.pixabay.com/photo/2019/12/30/09/50/the-new-beginning-4729282_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 24px;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: 900;
+  font-family: "Rock Salt", sans-serif;
+  text-shadow: 0 20px 2px rgba(0, 0, 0, 1);
+}
+
+h1,
+p {
+  margin-top: 0;
+}
+strong {
+  color: #bfd62e;
+}
+input {
+  border: none;
+  border-radius: 25px;
+  margin-top: 250px;
+  width: 500px;
+  font-size: 24px;
+  color: #bfd62e;
+  padding: 10px 20px;
+  background: #fffcdf;
+}
+button {
+  border: none;
+  font-size: 24px;
+  color: #4b3622;
+  padding: 10px 30px;
+  background: #bfd62e;
+  border-radius: 25px;
+}
+button:hover {
+  background: #f7f153;
+}
+input[type="email"]:focus,
+button:focus {
+  outline: none;
+}
