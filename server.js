@@ -20,23 +20,32 @@ const connection = mysql.createConnection({
 });
 connection.connect();
 
-/** Uncomment this to create user table
- * 
+/** 
+ * Uncomment this to create user table
+ * ====================================================
 connection.query(schema, function(error, results) {
   if (error) throw error;
   console.log("Table created successfully ", results);
 });
-
+======================================================
 */
-// let data = [];
-// for (let i = 0; i < 500; i++) {
-//   data.push([faker.internet.email(), faker.date.past()]);
-// }
 
-// connection.query("INSERT INTO users (email, created_at) VALUES ? ", [data], (error, results) => {
-//   if (error) throw error;
-//   console.log("User inserted", results);
-// });
+/**
+ * 
+Uncomment this to generate 500 user into the database
+======================================================
+
+let data = [];
+for (let i = 0; i < 500; i++) {
+  data.push([faker.internet.email(), faker.date.past()]);
+}
+
+connection.query("INSERT INTO users (email, created_at) VALUES ? ", [data], (error, results) => {
+  if (error) throw error;
+  console.log("User inserted", results);
+});
+======================================================
+ */
 
 app.get("/", (req, res) => {
   const query = "SELECT COUNT(*) AS count FROM users";
@@ -54,6 +63,7 @@ app.post("/join", (req, res) => {
     res.redirect("/");
   });
 });
+
 app.listen(8080, () => {
   console.log("Server running on port 8080");
 });
