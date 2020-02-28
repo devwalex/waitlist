@@ -3,7 +3,7 @@ body {
   text-shadow: 0 5px 2px rgba(0, 0, 0, 1);
   font-family: "Muli", sans-serif;
   color: #fffcdf;
-  background-image: url("https://cdn.pixabay.com/photo/2019/12/30/09/50/the-new-beginning-4729282_1280.jpg");
+  background-image: url("../img/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
